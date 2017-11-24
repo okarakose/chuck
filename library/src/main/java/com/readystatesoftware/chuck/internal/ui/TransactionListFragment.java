@@ -23,7 +23,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -68,8 +67,7 @@ public class TransactionListFragment extends Fragment implements
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
-                    DividerItemDecoration.VERTICAL));
+            recyclerView.addItemDecoration(new DividerItemDecoration(context));
             adapter = new TransactionAdapter(getContext(), listener);
             recyclerView.setAdapter(adapter);
         }
